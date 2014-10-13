@@ -2,6 +2,7 @@
 
 from map import rooms
 import string
+import re
 
 
 def remove_punct(text):
@@ -17,7 +18,7 @@ def remove_punct(text):
     >>> remove_punct(",go!So.?uTh")
     'goSouTh'
     """
-    text = text.translate(string.maketrans("",""), string.punctuation)
+    text = re.sub('[!?,.@#$%^&*();<>-]', '', text)
     return text
 
     
@@ -222,6 +223,7 @@ def main():
     while True:
         # Display game status (room description etc.)
         display_room(current_room)
+
 
         # What are the possible exits from the current room?
         exits = current_room["exits"]
