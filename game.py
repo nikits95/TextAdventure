@@ -56,7 +56,6 @@ def normalise_input(user_input):
     """
     user_input = remove_punct(user_input)
     user_input = remove_spaces(user_input)
-    print (user_input.lower())
     return user_input.lower()
 
     
